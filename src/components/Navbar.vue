@@ -9,7 +9,7 @@
           <ul>
               <li><router-link to="/home">Início</router-link></li>
               <li><router-link to="/directory">Diretório</router-link></li>
-              <li><router-link to="/profile">Cadastro</router-link></li>
+              <li><router-link to="/profile">Meus dados</router-link></li>
               <li><router-link to="/login">Sair</router-link></li>
           </ul>
       </div>

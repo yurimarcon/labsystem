@@ -1,4 +1,7 @@
 <template>
+    <div>
+        <BotoesSuperior/>
+    </div>
     <div class="container">
         <div class="perfil">
             <ResumoPerfil/>
@@ -18,10 +21,11 @@
 import ResumoPerfil from '../components/ResumoPerfil'
 import UltimosCommits from '../components/UltimosCommits'
 import UltimosProjetos from '../components/UltimosProjetos'
+import BotoesSuperior from '../components/BotoesSuperior'
 
 export default {
     name:'Home',
-    components: {ResumoPerfil,UltimosCommits,UltimosProjetos}
+    components: {ResumoPerfil,UltimosCommits,UltimosProjetos,BotoesSuperior}
 }
 </script>
 
@@ -38,7 +42,8 @@ export default {
 }
 .container{
     max-width: 100%;
-    margin: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 .perfil{
     max-width: 100%;
@@ -57,5 +62,4 @@ export default {
     width: 100%;
     padding: 0 0  0 2%;
 }
-
 </style>

@@ -15,7 +15,7 @@ export default {
 
 #resumoUsuario{
     max-width: 100%;
-    padding: 1% 0 2% 3%;
+    padding: 0 0 2% 3%;
 }
 h1{
     font-weight: 500;
