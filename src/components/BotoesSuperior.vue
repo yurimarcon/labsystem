@@ -1,10 +1,13 @@
 <template>
     <div class="botoeszinhos">
         <div>
-            <img  class="btnImg" src="../assets/mais.svg" alt="sinalDeMais">
+            <!-- <img  class="btnImg" src="../assets/mais.svg" alt="sinalDeMais"> -->
+            <router-link to="/newSample">
+                <i class="far fa-plus fa-2x" alt='criar estudo'></i>
+            </router-link>
         </div>
         <div>
-            <img  class="btnImg" src="../assets/msg.svg" alt="iconEmail">
+            <i class="far fa-comments fa-2x" alt='ajuda'></i>
         </div>
     </div>
 </template>
@@ -20,21 +23,22 @@ export default {
 .botoeszinhos{
     display: flex;
     justify-content: flex-end;
-    cursor: pointer;
     padding: 1% 3% 0 0;
-    height: 50px;
+    height: 60px;
 }
 .botoeszinhos div{
     margin-left: 15px ;
     margin-right: 15px ;
 }
-.btnImg{
-    margin-left: 1%;
+.botoeszinhos div i{
+    cursor: pointer;
+    /* margin-left: 1%;
     margin-right: 1%;
     width: 25px;
-    padding: 0;
+    padding: 0; */
 }
-.btnImg:hover{
-    padding: 5% 0 5% 0;
+.botoeszinhos div i:hover{
+    padding: 5% 0 0 0;
+    color: slateblue;
 }
 </style>

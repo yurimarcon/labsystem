@@ -3,6 +3,7 @@ import {createWebHistory, createRouter} from 'vue-router'
 import Home from '../pages/Home'
 import Directory from '../pages/Directory'
 import Profile from '../pages/Profile'
+import NewSample from '../pages/NewSample'
 
 const routes = [
     {
@@ -23,7 +24,12 @@ const routes = [
         name:'profile',
         path:'/profile',
         component: Profile
-    }
+    },
+    {
+        name:'newSample',
+        path:'/newSample',
+        component: NewSample
+    },
 ]
 
 const router = createRouter({

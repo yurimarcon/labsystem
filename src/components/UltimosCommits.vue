@@ -1,22 +1,26 @@
 <template>
-  <div class="card">
-        <h1>Últimas alterações</h1>
-        <hr>
-        <table>
-            <thead >
-                <th>Amostra</th>
-                <th>Observação</th>
-                <th>Data</th>
-            </thead>
-            <tbody>
-                <tr v-for="amostra, index in amostras" :key="index">
-                    <th>{{amostra.titulo}}</th>
-                    <th>{{amostra.observacao}}</th>
-                    <th>{{amostra.data}}</th>
-                </tr>
-            </tbody>
-        </table>
-  </div>
+    <article class="card message is-link">
+        <div class="message-header">
+            <p class="title">Últimas alterações</p>
+            <!-- <button class="delete" aria-label="delete"></button> -->
+        </div>
+        <div class="card message-body">
+            <table class="table ">
+                <thead >
+                    <th>Amostra</th>
+                    <th>Observação</th>
+                    <th>Data</th>
+                </thead>
+                <tbody>
+                    <tr v-for="amostra, index in amostras" :key="index">
+                        <th>{{amostra.titulo}}</th>
+                        <th>{{amostra.observacao}}</th>
+                        <th>{{amostra.data}}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
 </template>
 
 <script>
@@ -52,7 +56,7 @@ div{
     width: 100%;
 }
 h1{
-    margin-left: 5%
+    margin-top: 4%
 }
 hr{
     width: 90%;
@@ -70,5 +74,8 @@ tbody tr th{
 }
 tbody tr:hover{
     background-color: rgb(240, 240, 240);
+}
+.title{
+    color: white !important;
 }
 </style>

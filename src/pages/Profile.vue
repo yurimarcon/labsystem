@@ -2,11 +2,9 @@
     <div>
         <BotoesSuperior/>
     </div>
-  <div class="container">
-        <h1>
-           Esse é o meu perfil
-        </h1>
-      
+    <div class="container">
+        <h1 class="title">Meus Dados</h1>
+        <hr>
     </div>
 </template>
 
