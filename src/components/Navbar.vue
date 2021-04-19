@@ -5,7 +5,7 @@
             <div class="column">
                 <div class="logo">
                     <div class="">
-                        <img class="image is-128x128" src="../assets/moleculas.svg" alt="logo">
+                        <img class="image is-128x128" src="../assets/labsystem-logo.jpg" alt="logo">
                     </div>
                 </div>
             </div>
