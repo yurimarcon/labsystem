@@ -91,7 +91,7 @@
                                     <i class="fas fa-cloud-upload-alt"></i>
                                 </span>
                                 <span class="file-label">
-                                    Informe uma imagem…
+                                    Informe uma imagem...
                                 </span>
                             </span>
                         </label>
