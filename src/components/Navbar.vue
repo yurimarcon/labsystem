@@ -1,7 +1,7 @@
 <template>
     <div class="container" :class="{'show': showSidebar}">
         <div class="control">
-            <i class="fas fa-angle-double-right" @click="showNav"></i>
+            <i class="fas fa-bars" @click="showNav"></i>
         </div>
         <!--
         <div class="container columns is-desktop is-centered">
