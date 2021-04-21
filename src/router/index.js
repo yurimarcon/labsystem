@@ -4,6 +4,7 @@ import Home from '../pages/Home'
 import Directory from '../pages/Directory'
 import Profile from '../pages/Profile'
 import NewSample from '../pages/NewSample'
+import SampleProfile from '../pages/SampleProfile'
 
 const routes = [
     {
@@ -29,6 +30,11 @@ const routes = [
         name:'newSample',
         path:'/newSample',
         component: NewSample
+    },
+    {
+        name:'SampleProfile',
+        path:'/sampleprofile',
+        component: SampleProfile
     },
 ]
 
