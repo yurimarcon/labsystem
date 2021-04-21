@@ -38,7 +38,7 @@ export default {
 }
 .mySidenav{
   /* height: 100%; */
-  width: 25%;
+  width: 10%;
   /* border: 1px solid white; */
   /* border: 1px solid black; */
 }

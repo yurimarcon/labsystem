@@ -2,6 +2,7 @@
     <div class="container" :class="{'show': showSidebar}">
         <div class="control">
             <i class="fas fa-bars" @click="showNav"></i>
+            <!--<i v-show="showLink" key="0">Opções</i>-->
         </div>
         <!--
         <div class="container columns is-desktop is-centered">
@@ -12,34 +13,32 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="navigation-icons">
-            <i class="fas fa-home"></i>
-            <i class="fas fa-folder-open"></i>
-            <i class="fas fa-user-circle"></i>
-            <i class="fas fa-door-open"></i>
         </div>-->
         <div class="navigation-links">
             <transition-group name="fade">
                 <ul>
-                    <div v-show="showLink" key="1">
-                        <li><router-link to="/home">
-                            <i>Início</i> 
+                    <div>
+                        <li class="link"><router-link to="/home">
+                            <i class="fas fa-home"></i>
+                            <i v-show="showLink" key="1">Início</i> 
                         </router-link></li>
                     </div>
-                    <div v-show="showLink" key="2">
+                    <div>
                         <li><router-link to="/directory">
-                            <i>Diretório</i>
+                            <i class="fas fa-folder-open"></i>
+                            <i v-show="showLink" key="2">Diretório</i>
                         </router-link></li>
                     </div>
-                    <div v-show="showLink" key="3">
+                    <div>
                         <li><router-link to="/profile">
-                            <i>Meus Dados</i>
+                            <i class="fas fa-user-circle"></i>
+                            <i v-show="showLink" key="3">Meus Dados</i>
                         </router-link></li>
                     </div>
-                    <div v-show="showLink" key="4">
+                    <div>
                         <li><router-link to="/login">
-                            <i>Sair</i>
+                            <i class="fas fa-door-open"></i>
+                            <i v-show="showLink" key="4">Sair</i>
                         </router-link></li>
                     </div>
                 </ul>
@@ -80,69 +79,57 @@
     position: relative;
     top: 0;
     left: 0;
-    width: 70px;
-    padding: 10px;
+    width: 60px;
+    padding: 0px;
     min-height: calc(100vh - 20px);
-    background-color: rgb(175, 174, 174);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(116, 116, 116);
     border: solid rgb(97, 97, 97);
     border-width: 0 1px 0 0;
     z-index: 999;
+    height: 100%;
     transition: all .5s ease-in-out;
 }
-    .control {
-      color: var(--cor-da-letra);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 50px;
-      margin-bottom: 10px;
-    }
-      i {
-        font-size: 2rem;
-        cursor: pointer;
-        transition: all .5s ease-in-out;
-      }
+.control {
+    color: var(--cor-da-letra);
+    display: flex;
+    padding-left: 15px;
+    justify-content: left;
+    align-items: left;
+    width: 50px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    font-size: 2rem;
+
+}
+i {
+justify-content: left;
+align-items: left;
+font-size: 2rem;
+cursor: pointer;
+padding: 10px 0;
+transition: all .5s ease-in-out;
+}
+i:hover {
+    color: slateblue;
+}
     
-    .show {
-      width: 200px;
-    }
+.show {
+    width: 200px;
+}
     
-      /* .control > i {
-        color: #fff;
-        transform: rotateZ(-180deg);
-      }*/
-      .navigation-icons {
-        color: #fff;
-      }
-    
-    .navigation-icons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      width: 50px;
-      float: left;
-    }
-      i {
-        font-size: 2rem;
-        padding: 10px 0;
-        cursor: pointer;
-        transition: all .5s ease-in-out;
-      }
-        i:hover {
-          color: #fff;
-        }
-    .navigation-links {
-      padding-top: 14px;
-      float: left;
-    }
-      div {
-        font-size: 1.35rem;
-        padding-left: 10px;
-        margin-bottom: 18px;
-        cursor: pointer;
-      }
-        div:hover {
-          color: #fff;
-        } 
+
+.navigation-links {
+    padding-top: 14px;
+    float: left;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+div {
+font-size: 1.35rem;
+padding-left: 5px;
+margin-bottom: 18px;
+cursor: pointer;
+}
 </style>
