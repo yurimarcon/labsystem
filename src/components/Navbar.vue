@@ -1,99 +1,135 @@
 <template>
-    <div class="componentNav">
+    <div class="container" :class="{'show': showSidebar}">
+        <div class="control">
+            <i class="fas fa-bars" @click="showNav"></i>
+            <!--<i v-show="showLink" key="0">Opções</i>-->
+        </div>
+        <!--
         <div class="container columns is-desktop is-centered">
-            <!-- <div class="column is-full-mobile"> -->
             <div class="column">
                 <div class="logo">
                     <div class="">
-                        <img class="image is-128x128" src="../assets/moleculas.svg" alt="logo">
+                        <img class="image is-128x128" src="../assets/labsystem-logo.jpg" alt="logo">
                     </div>
                 </div>
             </div>
-            <!-- <div class="column is-8 ">
-                <h1 class="title">LabSystem</h1>
-            </div> -->
-        </div>
-
-        <div class="container opcoes">
-            <ul>
-                <li><router-link to="/home">
-                    <i class="fas fa-home"><span>Início</span></i> 
-                </router-link></li>
-                <li><router-link to="/directory">
-                    <i class="fas fa-folder-open"><span>Diretório</span></i>
-                </router-link></li>
-                <li><router-link to="/profile">
-                    <i class="fas fa-user-circle"><span>Meus dados</span></i>
-                </router-link></li>
-                <li><router-link to="/login">
-                    <i class="fas fa-door-open"><span>Sair</span></i>
-                </router-link></li>
-            </ul>
+        </div>-->
+        <div class="navigation-links">
+            <transition-group name="fade">
+                <ul>
+                    <div>
+                        <li class="link"><router-link to="/home">
+                            <i class="fas fa-home"></i>
+                            <i v-show="showLink" key="1">Início</i> 
+                        </router-link></li>
+                    </div>
+                    <div>
+                        <li><router-link to="/directory">
+                            <i class="fas fa-folder-open"></i>
+                            <i v-show="showLink" key="2">Diretório</i>
+                        </router-link></li>
+                    </div>
+                    <div>
+                        <li><router-link to="/profile">
+                            <i class="fas fa-user-circle"></i>
+                            <i v-show="showLink" key="3">Meus Dados</i>
+                        </router-link></li>
+                    </div>
+                    <div>
+                        <li><router-link to="/login">
+                            <i class="fas fa-door-open"></i>
+                            <i v-show="showLink" key="4">Sair</i>
+                        </router-link></li>
+                    </div>
+                </ul>
+            </transition-group>
         </div>
     </div>
 </template>
 
 <script>
-export default {
-    name:'Navbar',
-    methods:{
-        fechar(){
-            console.log('x')
+  export default {
+    data: () => {
+      return {
+        showSidebar: false,
+        showLink: false
+      }
+    },
+    methods: {
+      showNav() {
+        if(this.showSidebar) {
+          this.showLink = false;
+          setTimeout(() => {
+            this.showSidebar = false;
+          }, 500);
         }
-
+        else {
+          this.showSidebar = true;
+          setTimeout(() => {
+            this.showLink = true;
+          }, 500);
+        }
+      }
     }
-
-    }
+  }
 </script>
 
 <style scoped>
-
-.componentNav{
+.container {
     position: relative;
-    /* width: 100% !important; */
-    height: 100%;
+    top: 0;
+    left: 0;
+    width: 60px;
+    padding: 0px;
+    min-height: calc(100vh - 20px);
     background-color: rgb(255, 255, 255);
     box-shadow: 0 0 10px rgb(116, 116, 116);
-    border: 1px solid white;
+    border: solid rgb(97, 97, 97);
+    border-width: 0 1px 0 0;
+    z-index: 999;
+    height: 100%;
+    transition: all .5s ease-in-out;
 }
-.title{
+.control {
     color: var(--cor-da-letra);
-    margin-top: 20%;
-    width: 100%;
-}
-.logo{
-    height: 150px;
-    padding: 15%;
     display: flex;
-    justify-content: center;
-}
-.opcoes{
-    padding: 10% 0 0 5%;
-}
+    padding-left: 15px;
+    justify-content: left;
+    align-items: left;
+    width: 50px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    font-size: 2rem;
 
-.opcoes ul li{
-    list-style-type: none;
-    width: 100%;
-    margin: 8%;
 }
-i{
-    color: var(--cor-da-letra);
-    width: 100%;
+i {
+justify-content: left;
+align-items: left;
+font-size: 2rem;
+cursor: pointer;
+padding: 10px 0;
+transition: all .5s ease-in-out;
 }
-i:hover{
-    color: slateblue
-}
-.opcoes ul li a span{
-    width: 100%;
-    margin-left:5%;
-    color: var(--cor-da-letra);
-    text-decoration: none;
-    cursor: pointer;
-    font-family: 'Dosis', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-.opcoes ul li a span:hover{
+i:hover {
     color: slateblue;
+}
+    
+.show {
+    width: 200px;
+}
+    
+
+.navigation-links {
+    padding-top: 14px;
+    float: left;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+div {
+font-size: 1.35rem;
+padding-left: 5px;
+margin-bottom: 18px;
+cursor: pointer;
 }
 </style>

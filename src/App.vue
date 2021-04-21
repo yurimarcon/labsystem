@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <div class="nav">
+    <div class="mySidenav">
       <Navbar/>
     </div>
     <div class="pages">
@@ -19,6 +19,7 @@ export default {
     Navbar
   }
 }
+
 </script>
 
 <style>
@@ -35,9 +36,9 @@ export default {
   /* padding: 0 0 1% 0; */
   /* border: 1px solid black; */
 }
-.nav{
+.mySidenav{
   /* height: 100%; */
-  width: 25%;
+  width: 10%;
   /* border: 1px solid white; */
   /* border: 1px solid black; */
 }
