@@ -1,18 +1,20 @@
 <template>
     <div>
-        <BotoesSuperior/>
-    </div>
-    <div class="container">
-        <div class="perfil">
-            <ResumoPerfil/>
+        <div>
+            <BotoesSuperior/>
         </div>
-        <div class="atalho columns is-desktop">
-            <div class="resumoCommit column">
-                <HistoricoDeContribuicoes/>
-                <UltimosCommits/>
+        <div class="container">
+            <div class="perfil">
+                <ResumoPerfil/>
             </div>
-            <div class="ultimosProj column">
-                <UltimosProjetos/>
+            <div class="atalho columns is-desktop">
+                <div class="resumoCommit column">
+                    <HistoricoDeContribuicoes/>
+                    <UltimosCommits/>
+                </div>
+                <div class="ultimosProj column">
+                    <UltimosProjetos/>
+                </div>
             </div>
         </div>
     </div>
@@ -31,6 +33,5 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
 </style>

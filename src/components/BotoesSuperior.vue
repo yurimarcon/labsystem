@@ -39,6 +39,6 @@ export default {
 }
 .botoeszinhos div i:hover{
     padding: 5% 0 0 0;
-    color: slateblue;
+    color: var(--cor-do-hover-letra);
 }
 </style>
