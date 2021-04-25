@@ -3,15 +3,27 @@
         <BotoesSuperior/>
     </div>
     <div class="container">
-        <h1 class="title">Criação de nova amostra</h1>
+        <h1 class="title">Cadastro de Nova Amostra</h1>
         <hr>
         <div class="columns card">
             <div class="column is-6-desktop">
                 <div class="field">
-                    <label class="label">Nome da amostra</label>
+                    <label class="label">Nome da Amostra</label>
                     <div class="control">
                         <input class="input" type="text" placeholder="Título" v-model=amostraRascunho.titulo>
                     </div>
+                </div>
+                <div>
+                        <label class="label">Matriz</label>
+                        <input class="input" type="text" placeholder="Matriz" v-model=amostraRascunho.matriz>
+                </div>
+                <div>
+                        <label class="label">Dopantes</label>
+                        <input class="input" type="text" placeholder="Dopantes" v-model=amostraRascunho.dopantes>
+                </div>
+                <div>
+                        <label class="label">Localização</label>
+                        <input class="input" type="text" placeholder="local" v-model=amostraRascunho.local>
                 </div>
                 <div class="field">
                     <label class="label">Descrição</label>
@@ -19,56 +31,8 @@
                         <textarea class="textarea" placeholder="Informações sobre a amostra" v-model=amostraRascunho.descricao></textarea>
                     </div>
                 </div>
-
-                <div class="card">
-                    <table class="table is-fullwidth">
-                        <thead>
-                            <th>#</th>
-                            <th>Componente</th>
-                            <th>Ag</th>
-                        </thead>
-                        <tbody v-for="elemento, index in amostraRascunho.elementos" :key="index">
-                            <tr>
-                                <th>{{index +1}}</th>
-                                <th>
-                                    <div class="field">
-                                        <div class="control">
-                                            <input class="input" type="text" placeholder="Componente">
-                                        </div>
-                                    </div>
-                                </th>
-                                <th>
-                                    <div class="field">
-                                        <div class="control">
-                                            <input class="input" type="text" placeholder="Agente">
-                                        </div>
-                                    </div>
-                                </th>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>
-
-                                </th>
-                                <th>
-                                    Adicione ou remova elementos
-                                </th>
-                                <th>
-                                    <div class="field is-grouped">
-                                        <div class="control">
-                                            <button class="button is-link is-rounded" @click="adicionaElemento">+</button>
-                                        </div>
-                                        <div class="control">
-                                            <button class="button is-danger is-rounded" @click="removeElemento">-</button>
-                                        </div>
-
-                                    </div>
-                                </th>
-                            </tr>
-                        </tfoot>
-
-                    </table>
+                <div>
+                    <MatrizComponent/>
                 </div>
 
                 <div class="field salvar">
@@ -105,10 +69,14 @@
 <script>
 // import { mapGetters} from 'vuex'
 import BotoesSuperior from '../components/BotoesSuperior'
+import MatrizComponent from '../components/MatrizComponent'
 
 export default {
     name:'NewSample',
-    components:{BotoesSuperior},
+    components:{
+        BotoesSuperior,
+        MatrizComponent
+    },
     data(){
         return{
             amostraRascunho:{
