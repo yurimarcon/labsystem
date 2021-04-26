@@ -37,7 +37,7 @@
 
                 <div class="field salvar">
                     <div class="control">
-                        <button class="button is-link is-fullwidth">Salvar</button>
+                        <button class="button is-primary is-fullwidth">Salvar</button>
                     </div>
                 </div>
             </div>
@@ -83,18 +83,6 @@ export default {
                 titulo:'',
                 descricao:'',
                 elementos:[
-                    {
-                        componente:'',
-                        agente:''
-                    },
-                    {
-                        componente:'',
-                        agente:''
-                    },
-                    {
-                        componente:'',
-                        agente:''
-                    },
                     {
                         componente:'',
                         agente:''
