@@ -1,51 +1,54 @@
 <template>
-    <div class="containerApp" :class="{'show': showSidebar}">
-        <div class="control">
-            <i v-if="!showSidebar" class="fas fa-bars" @click="showNav"></i>
-            <i v-if="showSidebar" class="fas fa-times" @click="showNav"></i>
-            <!--<i v-show="showLink" key="0">Opções</i>-->
-        </div>
-        <!--
-        <div class="container columns is-desktop is-centered">
-            <div class="column">
-                <div class="logo">
-                    <div class="">
-                        <img class="image is-128x128" src="../assets/labsystem-logo.jpg" alt="logo">
+    <div v-if="session">
+        <div class="containerApp" :class="{'show': showSidebar}">
+            <div class="control">
+                <i v-if="!showSidebar" class="fas fa-bars" @click="showNav"></i>
+                <i v-if="showSidebar" class="fas fa-times" @click="showNav"></i>
+                <!--<i v-show="showLink" key="0">Opções</i>-->
+            </div>
+            <!--
+            <div class="container columns is-desktop is-centered">
+                <div class="column">
+                    <div class="logo">
+                        <div class="">
+                            <img class="image is-128x128" src="../assets/labsystem-logo.jpg" alt="logo">
+                        </div>
                     </div>
                 </div>
+            </div>-->
+            <div class="navigation-links">
+                <transition-group name="fade">
+                    <ul @click="hiddenNav">
+                        <li class="link"><router-link to="/home">
+                            <i class="fas fa-home"></i>
+                            <i v-show="showLink" key="1">Início</i> 
+                        </router-link></li>
+                        <li><router-link to="/directory">
+                            <i class="fas fa-folder-open"></i>
+                            <i v-show="showLink" key="2">Diretório</i>
+                        </router-link></li>
+                        <li><router-link to="/profile">
+                            <i class="fas fa-user-circle"></i>
+                            <i v-show="showLink" key="3">Meus Dados</i>
+                        </router-link></li>
+                        <li><router-link to="/login">
+                            <i class="fas fa-door-open"></i>
+                            <i v-show="showLink" key="4">Sair</i>
+                        </router-link></li>
+                    </ul>
+                </transition-group>
             </div>
-        </div>-->
-        <div class="navigation-links">
-            <transition-group name="fade">
-                <ul @click="hiddenNav">
-                    <li class="link"><router-link to="/home">
-                        <i class="fas fa-home"></i>
-                        <i v-show="showLink" key="1">Início</i> 
-                    </router-link></li>
-                    <li><router-link to="/directory">
-                        <i class="fas fa-folder-open"></i>
-                        <i v-show="showLink" key="2">Diretório</i>
-                    </router-link></li>
-                    <li><router-link to="/profile">
-                        <i class="fas fa-user-circle"></i>
-                        <i v-show="showLink" key="3">Meus Dados</i>
-                    </router-link></li>
-                    <li><router-link to="/login">
-                        <i class="fas fa-door-open"></i>
-                        <i v-show="showLink" key="4">Sair</i>
-                    </router-link></li>
-                </ul>
-            </transition-group>
         </div>
     </div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
   export default {
     data: () => {
       return {
         showSidebar: false,
-        showLink: false
+        showLink: false,
       }
     },
     methods: {
@@ -69,7 +72,8 @@
                 this.showSidebar = false;
             }, 200);
         }
-    }
+    },
+    computed:mapGetters(['session'])
   }
 </script>
 

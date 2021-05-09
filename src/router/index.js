@@ -5,6 +5,7 @@ import Directory from '../pages/Directory'
 import Profile from '../pages/Profile'
 import NewSample from '../pages/NewSample'
 import SampleProfile from '../pages/SampleProfile'
+import Login from '../pages/Login'
 
 const routes = [
     {
@@ -35,6 +36,11 @@ const routes = [
         name:'SampleProfile',
         path:'/sampleprofile',
         component: SampleProfile
+    },
+    {
+        name:'Login',
+        path:'/login',
+        component: Login
     },
 ]
 

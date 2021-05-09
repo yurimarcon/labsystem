@@ -1,5 +1,6 @@
 const moduloUsuario = {
     state       : {
+        session     :false, 
         nomeAluno   :'Aluno da Silva',
         RA          :'123.123.123.123',
         email       :'email.aluno@email.com',
@@ -8,6 +9,7 @@ const moduloUsuario = {
         fotoPerfil  :'https://segredosdomundo.r7.com/wp-content/uploads/2019/06/dollify-o-que-e-e-como-usar-o-app-que-cria-caricaturas-fofinhas-16.jpg',
     },
     getters     : {
+        session         : state => state.session,
         nomeAluno       : state => state.nomeAluno,
         RA              : state => state.RA,
         email           : state => state.email,
