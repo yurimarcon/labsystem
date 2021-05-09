@@ -24,8 +24,8 @@
                         </span>
                     </div>
                     </div>
-                    <button class="button is-link is-medium is-fullwidth" id="entrar" @click="logar" >Entrar</button>
-                    <button class="button is-link is-light is-small is-fullwidth mt-2">Esqueci minha senha</button>
+                    <button class="button is-primary is-medium is-fullwidth" id="entrar" @click="logar" >Entrar</button>
+                    <button class="button is-info is-light is-small is-fullwidth mt-2">Esqueci minha senha</button>
                 <!-- </form> -->
                 </div>
                 </div>

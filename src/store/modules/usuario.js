@@ -1,6 +1,6 @@
 const moduloUsuario = {
     state       : {
-        session     :false, 
+        session     : true, 
         nomeAluno   :'Aluno da Silva',
         RA          :'123.123.123.123',
         email       :'email.aluno@email.com',
